@@ -1,6 +1,8 @@
 shellbro.docker-engine-ce
 =========================
 
+[![Build Status](https://travis-ci.org/shellbro/ansible-role-docker-engine-ce.svg?branch=master)](https://travis-ci.org/shellbro/ansible-role-docker-engine-ce)
+
 Ansible role for installing Docker Engine CE on CentOS 7.
 
 Requirements
