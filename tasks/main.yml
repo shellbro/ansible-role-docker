@@ -1,2 +1,25 @@
 ---
-# tasks file for ansible-role-docker-engine-ce
+
+- name: add Docker GPG key
+  rpm_key:
+    key: https://download.docker.com/linux/centos/gpg
+  become: true
+
+- name: add Docker repository
+  get_url:
+    url: https://download.docker.com/linux/centos/docker-ce.repo
+    dest: /etc/yum.repos.d/docker-ce.repo
+  become: true
+
+- name: install Docker CE
+  yum:
+    name: docker-ce
+  become: true
+
+- name: start and enable Docker daemon
+  tags: notest
+  service:
+    enabled: true
+    name: docker
+    state: started
+  become: true
