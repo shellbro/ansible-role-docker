@@ -7,8 +7,8 @@
 
 - name: add Docker repository
   get_url:
-    url: https://download.docker.com/linux/centos/docker-ce.repo
     dest: /etc/yum.repos.d/docker-ce.repo
+    url: https://download.docker.com/linux/centos/docker-ce.repo
   become: true
 
 - name: install Docker CE
